@@ -46,14 +46,24 @@ document.querySelector("#slider").addEventListener("click", function() {
 });
 
 document.querySelector("#mute").addEventListener("click", function() {
-	console.log("Muted");
-	video.volume = 0;
-	document.querySelector('#mute').innerHTML="Unmute"
+	if (video.muted==false){
+		console.log("Muted");
+		video.muted = true;
+		document.querySelector('#mute').innerHTML="Unmute";
+	} else {
+		console.log("Unmuted");
+		video.muted = false;
+		document.querySelector('#mute').innerHTML="Mute";
+	}
 	
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
-	// console.log("Muted");
-	// video.volume = 0;
-	// document.querySelector('#mute').innerHTML="Unmute"
+	console.log(video.currentTime)
+	var timePlace = video.currentTime
+	if (timePlace > (video.duration - 15)){
+		video.currentTime=0;
+	} else{
+		video.currentTime = timePlace +15;
+	}
 });
