@@ -44,3 +44,16 @@ document.querySelector("#slider").addEventListener("click", function() {
 	video.volume = slider /100;
 	document.querySelector('#volume').innerHTML=video.volume*100+"%"
 });
+
+document.querySelector("#mute").addEventListener("click", function() {
+	console.log("Muted");
+	video.volume = 0;
+	document.querySelector('#mute').innerHTML="Unmute"
+	
+});
+
+document.querySelector("#skip").addEventListener("click", function() {
+	// console.log("Muted");
+	// video.volume = 0;
+	// document.querySelector('#mute').innerHTML="Unmute"
+});
